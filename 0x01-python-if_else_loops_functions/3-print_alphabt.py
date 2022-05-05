@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-for c in range(97, 123):
-    if(chr(c) != 'q' and chr(c) != 'e'): # if the character is different from q and e
-        print("{}".format(chr(c)), end="")
+"Print alphabet except q and e"
+for i in range(97, 123):
+    if i == 101 or i == 113:
+        continue
+    else:
+        print("{:s}".format(chr(i)), end="")
