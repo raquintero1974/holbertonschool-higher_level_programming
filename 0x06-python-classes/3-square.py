@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+    3-square.py
+    This module defines a square
+    return size
+"""
+
 
 class Square:
     """Square class
