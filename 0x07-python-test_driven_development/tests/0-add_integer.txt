@@ -1,87 +1,79 @@
-The 0-add_integer test module.
-=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+===============================
+			  add_integer
+		===============================
 
-Using "add_integer"
-++++++++++++++++++++++++++++++++++++
+Function that adds two integers. Receives int types or float, that will be
+casted into integers
 
-Import function from module:
+Tests:
 
-	>>> add_integer = __import__('0-add_integer').add_integer
+The set of tests are defined on the next cases:
 
-Test one int argument:
-	>>> add_integer(2)
-	100
+Import module:
 
-Test one int argument and check default second:
-	>>> add_integer(0)
-	98
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-Test one float:
-	>>> add_integer(166.7)
-	264
+Regular add:
 
-Test one negative float:
-	>>> add_integer(-97.978)
-	1
+    >>> add_integer(2, 3)
+    5
 
-Test 2 integers:
-	>>> add_integer(55, 500)
-	555
+Float add:
 
-Test 2 long ints:
-	>>> add_integer(11111111, 22222222)
-	33333333
+    >>> add_integer(2.0, 3)
+    5
 
-Test positive + negative ints
-	>>> add_integer(167, -7)
-	160
+Cast of a float on a int, with right round:
 
-Test negative, positive ints:
-	>>> add_integer(-100, 200)
-	100
+    >>> add_integer(2.4, 3.099)
+    5
 
-Test integer and float:
-	>>> add_integer(100, 3.907)
-	103
+Case: One value input:
+(This case is evaluated keeping in mind the declaration of 'b' variable, that
+is b = 98)
 
-Add infinity:
-	>>> add_integer(float('inf'), float(-inf))
-	Traceback (most recent call last):
-	...
-	OverflowError: cannot convert float infinity to integer.
+    >>> add_integer(1)
+    99
 
-Add NaN:
-	>>> add_integer(1, float('Nan')
-	Traceback (most recent call last):
-	...
-	ValueError: cannot convert float NaN to integer.
+Negative numbers:
 
-Test first arg invalid:
-	>>> add_integer("rad", 0)
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer.
+    >>> add_integer(-2, 7)
+    5
 
-Test first arg invalid:
-        >>> add_integer(0, "rad")
-        Traceback (most recent call last):
-        ...
-        TypeError: b must be an integer.
+Error management:
+=================
 
-Test both args invalid:
-        >>> add_integer("rad", {})
-        Traceback (most recent call last):
-        ...
-        TypeError: a must be an integer.
+Raised errors are specified for type, values and overflow
 
-Test 2 strings:
-        >>> add_integer("UNIX", "TOO COOL"
-        Traceback (most recent call last):
-        ...
-        TypeError: a must be an integer.
+Type Error on 'a' member:
 
-Test float overflow:
-	>>> add_integer(float('inf'), 0)
-	Traceback (most recent call last):
-        ...
-	OverflowError: cannot convert float infinity to int.
+    >>> add_integer("Holberton", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Type error on 'b' member:
+
+    >>> add_integer(2.0, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Case: More than one value, list, tuples:
+
+    >>> add_integer(3, (9, 8))
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Float type errors:
+==================
+
+Case: Float Not a Number:
+
+    >>> add_integer(3, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+Case: Float as infinite:
+
+    >>> add_integer(3, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
