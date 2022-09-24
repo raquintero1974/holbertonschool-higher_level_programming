@@ -1,15 +1,11 @@
-st_digit(number):
+#!/usr/bin/python3
 
-        """
 
-            Prints and returns the last digit of a number.
-
-                If given something that's not a number, this returns None.
-
-                    """
-
-                        number = (abs(number) % 10)
-
-                            print("{}".format(number), end="")
-
-                                return (int(number))
+def print_last_digit(number):
+    """
+    Prints and returns the last digit of a number.
+    If given something that's not a number, this returns None.
+    """
+    number = (abs(number) % 10)
+    print("{}".format(number), end="")
+    return (int(number))
