@@ -6,4 +6,3 @@ for x in range(0, 10):
             if x < 8:
                 print(', ', end="")
 print('\n', end="")
-© 2022 GitHub, Inc.
