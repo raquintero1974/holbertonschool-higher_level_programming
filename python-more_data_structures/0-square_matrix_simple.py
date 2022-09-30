@@ -10,4 +10,3 @@ def square_matrix_simple(matrix=[]):
                 squared.append(x**2)
             result.append(squared)
     return result
-
