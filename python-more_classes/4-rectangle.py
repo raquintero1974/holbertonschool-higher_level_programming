@@ -2,6 +2,7 @@
 
 """Defines a Rectangle class."""
 
+
 class Rectangle:
     """Represent a rectangle."""
 
@@ -69,3 +70,5 @@ class Rectangle:
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    
