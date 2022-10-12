@@ -1,0 +1,3 @@
+st(l):
+
+        return l[:]]
