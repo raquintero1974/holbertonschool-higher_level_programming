@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-# 11-student.py
-""" File name : 11-student.py
+# 12-student.py
+# Carlos Barros <1543@holbertonschool.com>
+""" File name : 12-student.py
 """
 
 
 class Student(object):
     """Class student"""
+
     def __init__(self, first_name, last_name, age):
         """__init__ initialized constructor
         Args:
@@ -17,6 +19,12 @@ class Student(object):
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """retrieves a dictionary represt """
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        dictionary = {}
+        for key, value in self.__dict__.items():
+            if key in attrs:
+                dictionary[key] = value
+        return dictionary
