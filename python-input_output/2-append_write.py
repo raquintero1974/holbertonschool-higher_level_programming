@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# 4-append_write.py
-# Carlos Barros <1543@holbertonschool.com>
+# 2-append_write.py
 """ File name : 4-append_write.py
 """
 
