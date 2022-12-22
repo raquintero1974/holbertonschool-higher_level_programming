@@ -1,7 +1,9 @@
 #!/usr/bin/node
-// Prints the first argument
-if (process.argv[2]) {
-    console.log(process.argv[2]);
-  } else {
-    console.log('No argument');
-  }
+// Prints a predetermined messages depending of the number of args
+if (!process.argv[2]) {
+  console.log('No argument');
+} else if (process.argv[3]) {
+  console.log('Arguments found');
+} else {
+  console.log('Argument found');
+}
