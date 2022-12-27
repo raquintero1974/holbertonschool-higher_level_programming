@@ -1,9 +1,15 @@
-#!/usr/bin/node
+##!/usr/bin/node
 
-require('request').get('http://swapi.co/api/films/' + process.argv[2] + '/', function (err, r, body) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(JSON.parse(body).title);
+const request = require('request');
+const api = 'http://swapi.co/api/films/';
+const movie = process.argv[2];
+let json;
+
+request(api + movie, function (error, response, body) {
+  if (error) {
+    console.log(error);
+    process.exit();
   }
+  json = JSON.parse(body);
+  console.log(json.title);
 });
