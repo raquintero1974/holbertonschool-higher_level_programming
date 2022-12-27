@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 
 require('request').get('http://swapi.co/api/films/' + process.argv[2] + '/', function (err, r, body) {
